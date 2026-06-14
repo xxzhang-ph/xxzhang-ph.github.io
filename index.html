@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Academic Homepage</title>
+  <title>张骁骁 - Academic Homepage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<button class="lang-toggle" onclick="toggleLang()">中 / EN</button>
+
 <header>
   <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
+    <a href="#about"><span data-zh="简介" data-en="About">简介</span></a>
+    <a href="#research"><span data-zh="研究" data-en="Research">研究</span></a>
+    <a href="#publications"><span data-zh="论文" data-en="Publications">论文</span></a>
+    <a href="#teaching"><span data-zh="教学" data-en="Teaching">教学</span></a>
+    <a href="#contact"><span data-zh="联系" data-en="Contact">联系</span></a>
   </nav>
 </header>
 
@@ -22,63 +25,135 @@
   <section id="hero">
     <div class="hero-content">
       <img src="assets/photo.jpg" alt="Profile Photo" class="profile-photo">
-      <h1>Your Name</h1>
-      <p class="title">Assistant Professor / Postdoc / PhD Student</p>
-      <p class="affiliation">Department of XXX, University of XXX</p>
-      <p class="email">email@university.edu</p>
+      <h1 data-zh="张骁骁" data-en="Xiao-Xiao Zhang">张骁骁</h1>
+      <p class="title" data-zh="Xiao-Xiao Zhang" data-en="张骁骁">Xiao-Xiao Zhang</p>
+      <p class="affiliation" data-zh="教授 · 博士生导师" data-en="Professor & PhD Supervisor">教授 · 博士生导师</p>
+      <p class="affiliation" data-zh="国家脉冲强磁场科学中心 · 物理学院" data-en="National High Magnetic Field Center & Physics School">国家脉冲强磁场科学中心 · 物理学院</p>
+      <p class="affiliation" data-zh="华中科技大学" data-en="Huazhong University of Science and Technology">华中科技大学</p>
       <div class="social-links">
+        <a href="https://orcid.org/0000-0003-3142-9232">ORCID</a>
         <a href="#">Google Scholar</a>
-        <a href="#">GitHub</a>
-        <a href="#">Twitter</a>
+        <a href="#">Email</a>
       </div>
     </div>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>I am a [position] at [University/Institution], working in [research area]. My research focuses on [brief description of research interests].</p>
-    <p>Previously, I was at [previous institution]. I received my Ph.D. from [university] in [year], advised by [advisor name].</p>
+    <h2 data-zh="简介" data-en="About Me">简介</h2>
+    <p data-zh="张骁骁（Xiao-Xiao Zhang），国家脉冲强磁场科学中心和物理学院教授、博导，入选国家级高层次青年人才项目。本科毕业于清华大学数理基科班，在东京大学获博士学位后，在加拿大、日本工作，合作组如Naoto Nagaosa, Marcel Franz, Yoshinori Tokura等著名理论与实验家。研究方向为理论凝聚态和量子物理，基于凝聚态物性调控量子材料体系、发现物质的新量子/拓扑物相与激发现象，融合发展量子多体物性与开放系统的新物理。" data-en="Xiao-Xiao Zhang is a Professor and PhD Supervisor at the National High Magnetic Field Center and School of Physics, Huazhong University of Science and Technology. He is selected into the National High-Level Young Talent Program. He received his Bachelor's degree from Tsinghua University and PhD from the University of Tokyo. He then worked in Canada and Japan, collaborating with renowned theorists and experimentalists such as Naoto Nagaosa, Marcel Franz, and Yoshinori Tokura. His research focuses on theoretical condensed matter and quantum physics, exploring new quantum/topological phases and excitation phenomena in quantum material systems.">张骁骁（Xiao-Xiao Zhang），国家脉冲强磁场科学中心和物理学院教授、博导，入选国家级高层次青年人才项目。本科毕业于清华大学数理基科班，在东京大学获博士学位后，在加拿大、日本工作，合作组如Naoto Nagaosa, Marcel Franz, Yoshinori Tokura等著名理论与实验家。研究方向为理论凝聚态和量子物理，基于凝聚态物性调控量子材料体系、发现物质的新量子/拓扑物相与激发现象，融合发展量子多体物性与开放系统的新物理。</p>
   </section>
 
   <section id="research">
-    <h2>Research Interests</h2>
+    <h2 data-zh="研究方向" data-en="Research Interests">研究方向</h2>
     <ul>
-      <li>Research Topic 1</li>
-      <li>Research Topic 2</li>
-      <li>Research Topic 3</li>
+      <li data-zh="拓扑/强关联体系的量子输运响应等现象" data-en="Quantum transport and response in topological/strongly correlated systems">拓扑/强关联体系的量子输运响应等现象</li>
+      <li data-zh="量子物质的磁光激发与探测（ARPES光电子谱、pump-probe泵浦探测、photo-driving光驱动等）" data-en="Magneto-optical excitation and detection of quantum materials (ARPES, pump-probe, photo-driving)">量子物质的磁光激发与探测（ARPES光电子谱、pump-probe泵浦探测、photo-driving光驱动等）</li>
+      <li data-zh="非厄米（non-Hermitian）物理，如异常点、趋肤效应及凝聚态观测" data-en="Non-Hermitian physics, including exceptional points, skin effects, and condensed matter observations">非厄米（non-Hermitian）物理，如异常点、趋肤效应及凝聚态观测</li>
+      <li data-zh="手性磁体（chiral magnet）的电声响应与拓扑磁性（如Skyrmion、Dirac磁单极子）" data-en="Electron-phonon response and topological magnetism in chiral magnets (Skyrmions, Dirac magnetic monopoles)">手性磁体（chiral magnet）的电声响应与拓扑磁性（如Skyrmion、Dirac磁单极子）</li>
     </ul>
+    <p style="margin-top: 16px;" data-zh="方法上力图提炼核心物理模型，挖掘深刻物理图像，利用能带拓扑理论及有效模型、多体理论、场论以及数值格林函数、模拟动力学演化等多种解析或数值手段。" data-en="Methodologically, he aims to extract core physical models and deep physical insights, utilizing band topology theory, effective models, many-body theory, field theory, numerical Green's functions, and dynamical evolution simulations.">方法上力图提炼核心物理模型，挖掘深刻物理图像，利用能带拓扑理论及有效模型、多体理论、场论以及数值格林函数、模拟动力学演化等多种解析或数值手段。</p>
   </section>
 
   <section id="publications">
-    <h2>Selected Publications</h2>
+    <h2 data-zh="代表性论文" data-en="Selected Publications">代表性论文</h2>
+    <p class="pub-note" data-zh="国际期刊发表论文30余篇，17篇见于 Nature、PNAS、Phys. Rev. Lett.、Sci. Bull.、Nat. Comm.、Nano Lett. 等中科院一区TOP期刊。" data-en="Over 30 publications in international journals, including 17 in top-tier journals such as Nature, PNAS, Phys. Rev. Lett., Sci. Bull., Nat. Comm., and Nano Lett.">国际期刊发表论文30余篇，17篇见于 Nature、PNAS、Phys. Rev. Lett.、Sci. Bull.、Nat. Comm.、Nano Lett. 等中科院一区TOP期刊。</p>
     <div class="pub-list">
       <div class="pub-item">
-        <span class="pub-title">Paper Title Here</span>
-        <span class="pub-authors">Author A, Author B, <strong>Your Name</strong></span>
-        <span class="pub-venue">Conference/Journal Name, Year</span>
-        <a href="#">[PDF]</a> <a href="#">[Code]</a>
+        <span class="pub-title" data-zh="单对Weyl点的最简理想Weyl半金属" data-en="Simplest ideal Weyl semimetal with single pair of Weyl points">单对Weyl点的最简理想Weyl半金属</span>
+        <span class="pub-venue" data-zh="Nature（与实验合作首次发现）" data-en="Nature (first discovery in collaboration with experiments)">Nature（与实验合作首次发现）</span>
       </div>
       <div class="pub-item">
-        <span class="pub-title">Another Paper Title</span>
-        <span class="pub-authors"><strong>Your Name</strong>, Author C</span>
-        <span class="pub-venue">Journal Name, Year</span>
-        <a href="#">[PDF]</a>
+        <span class="pub-title" data-zh="手性磁体中声子非互易传输" data-en="Phonon nonreciprocal transport in chiral magnets">手性磁体中声子非互易传输</span>
+        <span class="pub-venue" data-zh="Phys. Rev. Lett.（首次提出并发现）" data-en="Phys. Rev. Lett. (first proposal and discovery)">Phys. Rev. Lett.（首次提出并发现）</span>
+      </div>
+      <div class="pub-item">
+        <span class="pub-title" data-zh="磁单极子的临界现象" data-en="Critical phenomena of magnetic monopoles">磁单极子的临界现象</span>
+        <span class="pub-venue" data-zh="Nat. Comm., PRB, NJP（与实验合作）" data-en="Nat. Comm., PRB, NJP (collaboration with experiments)">Nat. Comm., PRB, NJP（与实验合作）</span>
+      </div>
+      <div class="pub-item">
+        <span class="pub-title" data-zh="非厄米趋肤体系中的磁场压制" data-en="Magnetic field suppression in non-Hermitian skin systems">非厄米趋肤体系中的磁场压制</span>
+        <span class="pub-venue" data-zh="Phys. Rev. Lett.（理论预言获实验验证）" data-en="Phys. Rev. Lett. (theoretical prediction verified by experiments)">Phys. Rev. Lett.（理论预言获实验验证）</span>
+      </div>
+      <div class="pub-item">
+        <span class="pub-title" data-zh="Weyl半金属中磁致强关联量子液体输运及非单调霍尔效应" data-en="Magnetic-field-induced strongly correlated quantum liquid transport and non-monotonic Hall effect in Weyl semimetals">Weyl半金属中磁致强关联量子液体输运及非单调霍尔效应</span>
+        <span class="pub-venue" data-zh="PRB, Phys. Rev. Lett.（理论预言获实验验证）" data-en="PRB, Phys. Rev. Lett. (theoretical prediction verified by experiments)">PRB, Phys. Rev. Lett.（理论预言获实验验证）</span>
+      </div>
+    </div>
+    <p style="margin-top: 16px;"><a href="https://orcid.org/0000-0003-3142-9232"><span data-zh="完整论文列表见 ORCID →" data-en="Full publication list on ORCID →">完整论文列表见 ORCID →</span></a></p>
+  </section>
+
+  <section id="education">
+    <h2 data-zh="教育经历" data-en="Education">教育经历</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="year">2013.4 - 2018.9</span>
+        <span class="desc" data-zh="日本东京大学 · 博士" data-en="The University of Tokyo · PhD">日本东京大学 · 博士</span>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2008.9 - 2012.7</span>
+        <span class="desc" data-zh="清华大学 · 数理基础科学 · 学士" data-en="Tsinghua University · Mathematical Sciences · Bachelor">清华大学 · 数理基础科学 · 学士</span>
       </div>
     </div>
   </section>
 
+  <section id="experience">
+    <h2 data-zh="工作经历" data-en="Work Experience">工作经历</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="year">2021.5 - 2023.12</span>
+        <span class="desc" data-zh="日本国立理化学研究所（RIKEN）· 基础科学特别研究员" data-en="RIKEN · Special Postdoctoral Researcher">日本国立理化学研究所（RIKEN）· 基础科学特别研究员</span>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2020.11 - 2021.5</span>
+        <span class="desc" data-zh="日本东京大学 · 特任研究员" data-en="The University of Tokyo · Project Researcher">日本东京大学 · 特任研究员</span>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2018.9 - 2020.10</span>
+        <span class="desc" data-zh="加拿大不列颠哥伦比亚大学（UBC）· Max Planck-UBC-UTokyo Fellowship 博士后" data-en="University of British Columbia · Max Planck-UBC-UTokyo Fellowship Postdoc">加拿大不列颠哥伦比亚大学（UBC）· Max Planck-UBC-UTokyo Fellowship 博士后</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2 data-zh="教学" data-en="Teaching">教学</h2>
+    <ul>
+      <li data-zh="热力学与统计物理" data-en="Thermodynamics and Statistical Physics">热力学与统计物理</li>
+      <li data-zh="凝聚态理论" data-en="Condensed Matter Theory">凝聚态理论</li>
+      <li data-zh="高等统计力学" data-en="Advanced Statistical Mechanics">高等统计力学</li>
+    </ul>
+  </section>
+
+  <section id="recruitment">
+    <h2 data-zh="招生招聘" data-en="Join Us">招生招聘</h2>
+    <p data-zh="常年招收研究生、博士后及本科生科研训练，欢迎对凝聚态及量子物理感兴趣的同学联系，无论你喜欢解析还是数值都大有可为！" data-en="We constantly recruit graduate students, postdocs, and undergraduate researchers. Students interested in condensed matter and quantum physics are welcome to contact us, whether you prefer analytical or numerical approaches!">常年招收研究生、博士后及本科生科研训练，欢迎对凝聚态及量子物理感兴趣的同学联系，无论你喜欢解析还是数值都大有可为！</p>
+    <p style="margin-top: 12px;" data-zh="有意组织/参加/提议经典著作读书讨论会的同学也请联系（凝聚态理论/量子计算/AI 任一相关）。" data-en="Students interested in organizing/attending/proposing classic textbook reading groups are also welcome (condensed matter theory / quantum computing / AI).">有意组织/参加/提议经典著作读书讨论会的同学也请联系（凝聚态理论/量子计算/AI 任一相关）。</p>
+  </section>
+
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: email@university.edu</p>
-    <p>Office: Room XXX, Building XXX</p>
-    <p>Address: University of XXX, City, Country</p>
+    <h2 data-zh="联系方式" data-en="Contact">联系方式</h2>
+    <p>Email: xxzhang (at) hust.edu.cn</p>
+    <p data-zh="地址：湖北省武汉市洪山区珞喻路1037号" data-en="Address: 1037 Luoyu Road, Hongshan District, Wuhan, Hubei, China">地址：湖北省武汉市洪山区珞喻路1037号</p>
+    <p data-zh="邮政编码：430074" data-en="Postal Code: 430074">邮政编码：430074</p>
+    <p data-zh="单位：华中科技大学 国家脉冲强磁场科学中心" data-en="Affiliation: National High Magnetic Field Center, HUST">单位：华中科技大学 国家脉冲强磁场科学中心</p>
   </section>
 
 </main>
 
 <footer>
-  <p>&copy; 2024 Your Name. Last updated: Month Year.</p>
+  <p>© 2024 Xiao-Xiao Zhang. All rights reserved.</p>
 </footer>
+
+<script>
+let currentLang = 'zh';
+
+function toggleLang() {
+  currentLang = currentLang === 'zh' ? 'en' : 'zh';
+  document.querySelectorAll('[data-zh]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+}
+</script>
 
 </body>
 </html>
