@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+#hero {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.affiliation {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.email {
+  font-size: 14px;
+  color: #777;
+}
+
+.social-links {
+  margin-top: 12px;
+}
+
+.social-links a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #0066cc;
+  font-size: 14px;
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pub-item {
+  padding: 12px 0;
+}
+
+.pub-title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}
+
+.pub-venue {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.pub-item a {
+  font-size: 13px;
+  color: #0066cc;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 13px;
+  color: #999;
+}
