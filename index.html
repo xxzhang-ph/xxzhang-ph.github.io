@@ -139,6 +139,14 @@
 
 </main>
 
+<section id="visitor-map">
+  <h2 data-zh="访客地图" data-en="Visitor Map">访客地图</h2>
+  <p class="map-subtitle" data-zh="点击地图上的标记查看访客信息" data-en="Click markers to see visitor info">点击地图上的标记查看访客信息</p>
+  <div id="map"></div>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</section>
+
 <footer>
   <p>© 2024 Xiao-Xiao Zhang. All rights reserved.</p>
 </footer>
@@ -153,6 +161,81 @@ function toggleLang() {
   });
   document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
 }
+
+// Visitor Map
+const MAP_TOKEN = 'your_mapbox_token';
+const VISITORS_API = 'https://api.jsonbin.io/v3/b/YOUR_BIN_ID';
+
+const visitors = JSON.parse(localStorage.getItem('visitors') || '[]');
+
+function initMap() {
+  const map = L.map('map').setView([30, 10], 2);
+  
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  const pinIcon = L.divIcon({
+    html: '📌',
+    className: 'custom-marker',
+    iconSize: [24, 24],
+    iconAnchor: [12, 24]
+  });
+
+  visitors.forEach(v => {
+    const marker = L.marker([v.lat, v.lon], { icon: pinIcon }).addTo(map);
+    marker.bindPopup(`
+      <div class="popup-city">${v.city || 'Unknown'}</div>
+      <div class="popup-country">${v.country || ''}</div>
+      <div class="popup-time">${v.time || ''}</div>
+    `);
+  });
+
+  trackVisit(map, pinIcon);
+}
+
+function trackVisit(map, pinIcon) {
+  fetch('http://ip-api.com/json/?fields=status,message,country,regionName,city,lat,lon')
+    .then(r => r.json())
+    .then(data => {
+      if (data.status !== 'success') return;
+      
+      const visitor = {
+        lat: data.lat,
+        lon: data.lon,
+        city: data.city,
+        country: data.country,
+        region: data.regionName,
+        time: new Date().toLocaleString(),
+        ip: 'hidden'
+      };
+
+      const exists = visitors.some(v => 
+        Math.abs(v.lat - visitor.lat) < 0.1 && 
+        Math.abs(v.lon - visitor.lon) < 0.1 &&
+        v.city === visitor.city
+      );
+
+      if (!exists) {
+        visitors.push(visitor);
+        localStorage.setItem('visitors', JSON.stringify(visitors));
+        
+        const marker = L.marker([visitor.lat, visitor.lon], { icon: pinIcon }).addTo(map);
+        marker.bindPopup(`
+          <div class="popup-city">${visitor.city}</div>
+          <div class="popup-country">${visitor.country}</div>
+          <div class="popup-time">${visitor.time}</div>
+        `).openPopup();
+        
+        map.setView([visitor.lat, visitor.lon], 5);
+      }
+    })
+    .catch(() => {});
+}
+
+document.addEventListener('DOMContentLoaded', initMap);
 </script>
 
 </body>
