@@ -68,7 +68,7 @@ section {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 400;
   color: #1a1a1a;
   letter-spacing: 1px;
@@ -93,12 +93,12 @@ h2 {
 }
 
 .profile-photo {
-  width: 220px;
-  height: 280px;
+  width: 160px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   border: 3px solid #d4c5a9;
 }
 
