@@ -94,19 +94,20 @@ h2 {
 
 .hero-flex {
   display: flex;
-  align-items: center;
-  gap: 48px;
+  align-items: flex-start;
+  gap: 60px;
   justify-content: center;
 }
 
 .hero-text {
   flex: 1;
   max-width: 500px;
+  padding-top: 20px;
 }
 
 .profile-photo {
-  width: 160px;
-  height: 200px;
+  width: 180px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
