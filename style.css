@@ -291,6 +291,20 @@ footer {
   letter-spacing: 2px;
 }
 
+.visitor-stats {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #b0a080;
+  letter-spacing: 1px;
+}
+
+#busuanzi_value_site_pv,
+#busuanzi_value_site_uv {
+  color: #8b7355;
+  font-weight: 600;
+  margin: 0 2px;
+}
+
 #visitor-map {
   padding: 80px 40px;
 }
