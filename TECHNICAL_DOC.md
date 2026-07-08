@@ -18,6 +18,8 @@
 ├── style.css           # 所有样式
 ├── assets/
 │   └── photo.jpg       # 个人照片（248×298 像素，约 5:6 比例）
+├── sitemap.xml         # 站点地图（SEO）
+├── robots.txt          # 爬虫指令（SEO）
 ├── TECHNICAL_DOC.md    # 本技术文档
 └── .git/
 ```
@@ -99,7 +101,7 @@ function toggleLang() {
 | `#hero` | 姓名、职位、单位、社交链接、照片 | 顶部区域，flex 布局，照片在右侧 |
 | `#about` | 个人简介 | 一段文字，中英双语 |
 | `#research` | 研究方向 | 3 个方向 + 方法论描述 |
-| `#publications` | 论文 | 摘要描述 + ORCID 链接 |
+| `#publications` | 论文 | 30余篇，18篇见于一区TOP期刊 + ORCID 链接 |
 | `#education` | 教育与工作经历 | 时间线格式（`.timeline`） |
 | `#teaching` | 教学 | 课程标签 |
 | `#recruitment` | 招生招聘 | 特殊背景色区块 |
@@ -179,6 +181,22 @@ function toggleLang() {
 - 显示页面浏览量和独立访客数
 - 双语支持，样式与页面一致
 
+### 5. SEO 优化（2026-07-08）
+- 添加 meta description、keywords、author
+- 添加 Open Graph 标签（og:title/description/type/url/image/locale）
+- 添加 Schema.org 结构化数据（Person 类型），帮助搜索引擎识别学者主页
+- 添加 sitemap.xml 和 robots.txt，引导搜索引擎抓取
+
+### 6. 论文与经历更新（2026-07-08）
+- 论文数从 17 篇改为 18 篇
+- PRL 添加注释 "Phys. Rev. Lett.(8篇)"（中英文均已添加）
+- 教育经历中删除国名（日本、加拿大），中英文均已处理
+  - 日本国立理化学研究所 → 国立理化学研究所
+  - 日本东京大学 → 东京大学（出现两处）
+  - 加拿大不列颠哥伦比亚大学 → 不列颠哥伦比亚大学
+- 清华大学专业英文从 "Mathematical Sciences" 改为 "Physics"
+- 页脚年份从 © 2024 改为 © 2026
+
 ---
 
 ## Git 工作流
@@ -201,6 +219,11 @@ git -c http.version=HTTP/1.1 push
 git config --local --unset http.proxy
 git config --local --unset https.proxy
 ```
+
+### GitHub 认证
+- 使用 Personal Access Token (PAT) 认证，已存入 macOS 钥匙串
+- 全局凭证助手已配置：`git config --global credential.helper osxkeychain`
+- 推送时直接 `git push` 即可，无需手动输入用户名密码
 
 ### 注意事项
 - VPN 端口为 7890
@@ -240,7 +263,7 @@ git config --local --unset https.proxy
 1. **无响应式设计**：CSS 中没有 media query，在移动端可能显示不佳
 2. **无导航高亮**：当前导航链接没有 active 状态
 3. **无平滑滚动**：锚点跳转无动画效果
-4. **页脚年份硬编码**：© 2024 需要手动更新
+4. **页脚年份硬编码**：© 2026 需要手动更新
 5. **不蒜子依赖外部服务**：如果 busuanzi.ibruce.info 不可用，计数器会显示空白
 
 ---
@@ -251,3 +274,31 @@ git config --local --unset https.proxy
 2. **缓存问题**：CSS 修改后必须更新版本号，否则浏览器可能使用旧版本
 3. **推送代理**：推送 GitHub 需要 VPN 代理（端口 7890）
 4. **不要使用 HTTP2**：推送时使用 `-c http.version=HTTP/1.1` 参数
+
+---
+
+## AI 接手指南
+
+本文档是本项目的唯一知识源。新 AI 会话接手时，直接读取此文件即可获得完整上下文。
+
+### 必须遵守的硬规则
+
+1. **双语一致性**：修改任何文本时，必须同时更新 `data-zh`、`data-en` 属性以及元素内的默认文本（三处都要改）
+2. **CSS 缓存版本号**：修改 `style.css` 后，必须更新 `index.html` 中 `?v=` 的值
+3. **推送流程**：使用代理 + HTTP/1.1，详见「Git 工作流」章节
+4. **提交规范**：commit message 使用英文
+5. **记录归档**：所有项目记录、修改日志、操作指南统一写入本文件（`TECHNICAL_DOC.md`），本文件是唯一知识源
+
+### 架构决策
+
+- 双语实现：`data-zh` / `data-en` 属性 + JS 切换，无需 i18n 框架（单页应用够用）
+- 访客统计：不蒜子（busuanzi.ibruce.info），国内可访问的免费服务
+- 视觉风格：暖米色背景 `#faf8f5`，棕色系 `#6b5b3e` / `#8b7355`，Georgia 衬线字体
+
+### 项目结构
+
+纯静态文件，无构建步骤，无依赖：
+- `index.html` — 所有内容 + 内联 JS
+- `style.css` — 所有样式
+- `assets/photo.jpg` — 个人照片（248×298，约 5:6）
+- `TECHNICAL_DOC.md` — 本技术文档
