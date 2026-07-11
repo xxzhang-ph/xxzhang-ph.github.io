@@ -187,6 +187,11 @@ function toggleLang() {
 - 添加 Schema.org 结构化数据（Person 类型），帮助搜索引擎识别学者主页
 - 添加 sitemap.xml 和 robots.txt，引导搜索引擎抓取
 
+### 7. About翻译修正（2026-07-11）
+- 修正英文About最后一句与中文不对应的问题
+- 英文增加 "and integrating quantum many-body properties with open-system physics."
+- 对应中文"融合发展量子多体物性与开放系统的新物理"
+
 ### 6. 论文与经历更新（2026-07-08）
 - 论文数从 17 篇改为 18 篇
 - PRL 添加注释，从 8 篇更新为 9 篇（中英文均已添加）
