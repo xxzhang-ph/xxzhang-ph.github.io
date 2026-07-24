@@ -187,10 +187,16 @@ function toggleLang() {
 - 添加 Schema.org 结构化数据（Person 类型），帮助搜索引擎识别学者主页
 - 添加 sitemap.xml 和 robots.txt，引导搜索引擎抓取
 
-### 7. About翻译修正（2026-07-11）
+### 7. 翻译与格式优化（2026-07-11）
 - 修正英文About最后一句与中文不对应的问题
-- 英文增加 "and integrating quantum many-body properties with open-system physics."
+- 英文增加 "and synthetically studying quantum many-body properties and open-system physics"
 - 对应中文"融合发展量子多体物性与开放系统的新物理"
+- 英文研究兴趣部分 "he aims" 改为 "we aim"
+- 英文Publication数量 "Over 30" 改为 "30+"，"18" 改为 "many"，删除 "(8)"
+- Publication格式优化：添加下划线和分项换行
+  - 中文：<u>多次预言新现象获得实验验证或解释实验</u>，例如：+ 分项
+  - 英文：<u>Multiple theoretical predictions have been verified by experiments</u>, such as: + 分项
+  - 使用 `<span class="lang-zh">` 和 `<span class="lang-en">` 实现语言切换时保持HTML格式
 
 ### 6. 论文与经历更新（2026-07-08）
 - 论文数从 17 篇改为 18 篇
@@ -202,6 +208,18 @@ function toggleLang() {
   - 加拿大不列颠哥伦比亚大学 → 不列颠哥伦比亚大学
 - 清华大学专业英文从 "Mathematical Sciences" 改为 "Physics"
 - 页脚年份从 © 2024 改为 © 2026
+
+### 7. 简介内容拆分（2026-07-24）
+- 简介（#about）中移除教育背景描述："本科毕业于清华大学数理基科班，在东京大学获博士学位后，在加拿大、日本工作，合作组如Naoto Nagaosa, Marcel Franz, Yoshinori Tokura等著名理论与实验家。"
+- 该内容移至教育与工作经历（#education）区块的 timeline 表格下方
+- 中英文版本均已同步更新
+
+### 8. 新增课题组栏目 + 合并招生招聘（2026-07-24）
+- 在教学栏目前新增"课题组"（#group）栏目，内容：在读研究生 5 名、本科生 1 名
+- 将原独立的"招生招聘"（#recruitment）栏目的招聘语合并入课题组栏目
+- 删除独立的 #recruitment 区块
+- 研究方向末尾段落 CSS 字号从 14px 恢复为默认
+- 工作经历下方段落内联字号从 15px 恢复为默认
 
 ---
 
